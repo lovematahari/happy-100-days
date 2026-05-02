@@ -6,207 +6,108 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif; /* Font bersih modern */
-    background-color: #fcf8f5; /* Warna cream pucat, hangat */
-    color: #555;
+    font-family: 'Poppins', sans-serif;
+    /* Gradasi warna yang lebih tegas dan romantis */
+    background: linear-gradient(135deg, #fff5f5 0%, #fed7e2 100%);
+    color: #4a4a4a;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 20px;
-    overflow-x: hidden;
 }
 
 .main-container {
     text-align: center;
-    max-width: 400px;
+    max-width: 450px;
     width: 100%;
 }
 
-/* --- Header Section --- */
-.header-section {
-    margin-bottom: 30px;
-}
-
+/* --- Header --- */
 .korean-text {
-    font-family: 'Gowun Batang', serif; /* Font Korea klasik yang elegan */
-    font-size: 1.2rem;
-    color: #bca0dc; /* Warna pastel ungu lembut */
-    font-weight: 400;
-    letter-spacing: 2px;
+    font-family: 'Gowun Batang', serif;
+    font-size: 1.4rem;
+    color: #d53f8c; /* Pink gelap yang tegas */
+    font-weight: 700;
+    margin-bottom: 5px;
 }
 
 h1 {
-    font-weight: 600;
-    font-size: 1.8rem;
-    color: #333;
-    margin-top: 5px;
+    font-size: 2.2rem;
+    color: #2d3748;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
-/* --- Polaroid Section --- */
-.polaroid-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
-    perspective: 1000px; /* Buat efek 3D sedikit */
-}
-
+/* --- Polaroid yang lebih tegas --- */
 .polaroid {
     background: white;
-    padding: 15px 15px 30px 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    transform: rotate(-3deg); /* Miring sedikit biar cute */
-    border-radius: 2px;
-    transition: transform 0.5s ease;
-}
-
-.polaroid:hover {
-    transform: rotate(0deg) scale(1.05); /* Efek saat kursor di atasnya */
+    padding: 15px 15px 40px 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15); /* Bayangan lebih dalam */
+    transform: rotate(-2deg);
+    border-radius: 4px;
+    margin-bottom: 50px;
 }
 
 .couple-photo {
     width: 100%;
-    height: 250px;
-    object-fit: cover; /* Agar foto gak penyet */
-    border: 1px solid #eee;
+    height: 300px;
+    object-fit: cover;
+    border: 1px solid #edf2f7;
+    display: block;
 }
 
-.polaroid-date {
-    font-family: 'Gowun Batang', serif;
-    margin-top: 15px;
-    font-size: 0.8rem;
-    color: #888;
-}
-
-/* --- Candle Section (CSS Animation) --- */
-.candle-section {
-    position: relative;
-    margin-bottom: 20px;
-}
-
+/* --- Lilin yang lebih tegas (Strawberry Red) --- */
 .candle-wrapper {
     position: relative;
-    width: 20px;
-    height: 120px;
-    margin: 0 auto 15px auto;
+    width: 30px;
+    height: 100px;
+    margin: 0 auto 20px auto;
 }
 
 .wax {
-    width: 20px;
-    height: 80px;
-    background: #ffb7b2; /* Warna pastel merah muda */
-    border-radius: 10px 10px 5px 5px;
+    width: 30px;
+    height: 90px;
+    background: #e53e3e; /* Merah tegas */
+    border-radius: 8px 8px 4px 4px;
     position: absolute;
     bottom: 0;
-}
-
-.wick {
-    width: 2px;
-    height: 15px;
-    background: #444;
-    position: absolute;
-    top: 30px;
-    left: 9px;
+    box-shadow: inset -5px 0 10px rgba(0,0,0,0.2);
 }
 
 .flame {
-    width: 16px;
-    height: 26px;
-    background-color: #ff9d00;
+    width: 20px;
+    height: 35px;
+    background: radial-gradient(circle at bottom, #fff7ed 0%, #fbbf24 40%, #f59e0b 100%);
     border-radius: 50% 50% 20% 20%;
     position: absolute;
-    top: 5px;
-    left: 2px;
-    box-shadow: 0 0 15px 5px rgba(255, 157, 0, 0.5);
-    animation: flicker 0.1s ease-in-out infinite alternate;
+    top: -25px;
+    left: 5px;
+    box-shadow: 0 0 25px 10px rgba(251, 191, 36, 0.6);
+    animation: flicker 0.15s ease-in-out infinite alternate;
 }
 
-/* Animasi Lilin Bergoyang */
-@keyframes flicker {
-    0% { transform: skewX(1deg) scale(1); opacity: 0.9; }
-    100% { transform: skewX(-1deg) scale(1.05); opacity: 1; }
-}
-
-/* State saat lilin mati */
-.candle-wrapper.blown-out .flame {
-    display: none;
-}
-
-.candle-wrapper.blown-out .wick::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: rgba(100, 100, 100, 0.5);
-    border-radius: 50%;
-    top: -10px;
-    left: -4px;
-    animation: smoke 2s ease-out forwards;
-}
-
-@keyframes smoke {
-    0% { transform: translateY(0) scale(1); opacity: 0.5; }
-    100% { transform: translateY(-30px) scale(2); opacity: 0; }
-}
-
-/* --- Interaction elements --- */
-.instruction {
-    font-size: 0.9rem;
-    color: #888;
-    font-weight: 300;
-    margin-top: 10px;
-}
-
+/* --- Tombol & Pesan --- */
 #start-btn {
-    background-color: #bca0dc; /* Pastel ungu */
+    background: #d53f8c;
     color: white;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 50px;
     border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem;
-    margin-top: 15px;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(188, 160, 220, 0.3);
-    transition: background 0.3s ease;
+    box-shadow: 0 10px 20px rgba(213, 63, 140, 0.4);
+    transition: 0.3s;
 }
 
-#start-btn:hover {
-    background-color: #a580cf;
-}
+#start-btn:hover { transform: scale(1.05); background: #b83280; }
 
-/* --- Surprise Message (Hidden by default) --- */
 .surprise-message {
-    margin-top: 30px;
-    padding: 20px;
     background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    animation: slideUp 1s ease-out forwards;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border: 2px solid #fed7e2;
 }
 
-.hidden {
-    display: none;
-}
-
-@keyframes slideUp {
-    0% { transform: translateY(50px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
-}
-
-.confetti-effect {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.surprise-message h2 {
-    font-size: 1.4rem;
-    color: #ff9a9e; /* Warna pastel merah keemasan */
-    margin-bottom: 10px;
-}
-
-.surprise-message p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #666;
-}
+.surprise-message h2 { color: #e53e3e; font-size: 1.8rem; }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our 100th Day - Blowing Candle</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Menggunakan font Google agar estetik (gaya Korea modern) -->
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <!-- Bagian Atas: Judul dan Ucapan Awal -->
+        <header class="header-section">
+            <h2 class="korean-text">우리 백일 기념</h2> <!-- Tulisan Korea: Perayaan 100 Hari Kita -->
+            <h1>100 Days Together</h1>
+        </header>
+
+        <!-- Bagian Tengah: Foto Polaroid -->
+        <div class="polaroid-container">
+            <div class="polaroid">
+                <img src="foto-kita.jpg" alt="Foto Kita Berdua" class="couple-photo">
+                <div class="polaroid-date">202X.XX.XX (Tgl Jadian) → Today</div>
+            </div>
+        </div>
+
+        <!-- Bagian Bawah: Lilin Interaktif -->
+        <div class="candle-section">
+            <div class="candle-wrapper" id="candle-wrapper">
+                <div class="flame" id="flame"></div>
+                <div class="wick"></div>
+                <div class="wax"></div>
+            </div>
+            
+            <!-- Petunjuk untuk Pacar -->
+            <p class="instruction" id="instruction-text">Make a wish and blow the candle...</p>
+            
+            <!-- Tombol untuk mulai Mic (Wajib karena kebijakan Browser modern) -->
+            <button id="start-btn">Ready to Blow?</button>
+        </div>
+
+        <!-- Bagian Kejutan: Muncul setelah Lilin Mati -->
+        <div class="surprise-message hidden" id="surprise-message">
+            <div class="confetti-effect">🎉</div>
+            <h2>Happy 100th Anniversary, My Love!</h2>
+            <p> I LOVE YOU SO MUCH SUKII SUKIII! ❤️</p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

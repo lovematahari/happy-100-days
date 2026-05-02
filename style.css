@@ -7,15 +7,16 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    /* Gradasi Langit Malam Berbintang */
     background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
     color: #ffffff;
     display: flex;
+    flex-direction: column; /* Biar konten urut ke bawah */
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    overflow: hidden;
+    min-height: 120vh; /* Kita tambah tingginya biar ada ruang scroll */
+    padding: 50px 20px; /* Tambah padding atas bawah biar nggak mentok */
     position: relative;
+    /* overflow: hidden;  <-- HAPUS ATAU KOMENTARI BARIS INI */
 }
 
 /* Efek Bintang Bergerak agar lebih hidup */

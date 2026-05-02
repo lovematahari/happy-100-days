@@ -1,3 +1,4 @@
+/* --- Reset & Base Styles --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,117 +7,131 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    /* Background Hitam Classy dengan gradasi halus */
-    background: radial-gradient(circle, #1a1a1a 0%, #0d0d0d 100%);
+    /* Gradasi Langit Malam Berbintang */
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
     color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow-x: hidden;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Efek Bintang Bergerak agar lebih hidup */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    opacity: 0.3;
+    animation: stars 100s linear infinite;
+}
+
+@keyframes stars {
+    from { background-position: 0 0; }
+    to { background-position: 550px 1100px; }
 }
 
 .main-container {
     text-align: center;
     max-width: 400px;
     width: 100%;
-    padding: 20px;
+    z-index: 2; /* Biar di atas bintang */
 }
 
-.korean-text {
-    font-family: 'Gowun Batang', serif;
-    color: #ffd700; /* Warna emas untuk kesan mewah */
-    letter-spacing: 3px;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-    opacity: 0.8;
-}
-
-h1 {
-    font-size: 1.8rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    margin-bottom: 40px;
-    color: #f0f0f0;
-}
-
-/* Polaroid Premium */
+/* Polaroid Putih Classy (Kontras dengan background gelap) */
 .polaroid {
-    background: #252525; /* Hitam keabuan agar elegan */
-    padding: 12px 12px 35px 12px;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-    border: 1px solid #333;
-    transform: rotate(-1deg);
-    margin-bottom: 60px;
-    transition: 0.5s;
+    background: #ffffff; 
+    padding: 15px 15px 45px 15px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+    border-radius: 2px;
+    transform: rotate(-1.5deg);
+    margin-bottom: 50px;
 }
 
 .couple-photo {
     width: 100%;
     height: 320px;
     object-fit: cover;
-    filter: grayscale(20%); /* Sedikit sentuhan film look */
-    border-radius: 2px;
+    border: 1px solid #eee;
 }
 
-/* Lilin Tegas & Solid */
+/* Tanggal jadi Hitam agar terlihat di bingkai putih */
+.polaroid-date {
+    font-family: 'Gowun Batang', serif;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #222;
+    font-weight: 700;
+}
+
+/* Lilin Merah Solid ( Strawberry Red ) */
 .candle-wrapper {
     position: relative;
-    width: 35px;
-    height: 110px;
-    margin: 0 auto 30px auto;
+    width: 30px;
+    height: 100px;
+    margin: 0 auto 20px auto;
 }
 
 .wax {
-    width: 35px;
-    height: 100px;
-    background: #c53030; /* Merah Maroon solid */
+    width: 30px;
+    height: 90px;
+    background: #e53e3e;
     border-radius: 6px;
     position: absolute;
     bottom: 0;
-    box-shadow: inset -8px 0 15px rgba(0,0,0,0.4);
+    box-shadow: inset -5px 0 10px rgba(0,0,0,0.3);
 }
 
 .flame {
-    width: 24px;
-    height: 40px;
-    background: radial-gradient(circle at bottom, #fff 0%, #f6e05e 40%, #ed8936 100%);
+    width: 20px;
+    height: 35px;
+    background: radial-gradient(circle at bottom, #fff 0%, #fbbf24 40%, #f59e0b 100%);
     border-radius: 50% 50% 20% 20%;
     position: absolute;
-    top: -30px;
+    top: -25px;
     left: 5px;
-    box-shadow: 0 0 30px 10px rgba(237, 137, 54, 0.5);
+    box-shadow: 0 0 30px 10px rgba(251, 191, 36, 0.4);
     animation: flicker 0.1s infinite alternate;
 }
 
 @keyframes flicker {
-    0% { transform: scale(1) rotate(-1deg); }
-    100% { transform: scale(1.1) rotate(1deg); }
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
 }
 
 .candle-wrapper.blown-out .flame { display: none; }
 
-/* Pesan Kejutan */
-.surprise-message {
-    background: #222;
-    padding: 30px;
-    border-radius: 15px;
-    border: 1px solid #444;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-    margin-top: 20px;
-}
-
-.surprise-message h2 { color: #ffd700; margin-bottom: 10px; }
-
+/* Tombol Start */
 #start-btn {
     background: transparent;
-    color: #ffd700;
-    border: 1px solid #ffd700;
+    color: #fff;
+    border: 1px solid #fff;
     padding: 10px 25px;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
-    font-weight: 500;
+    font-size: 0.9rem;
     transition: 0.3s;
 }
 
-#start-btn:hover { background: #ffd700; color: #000; }
+#start-btn:hover { background: #fff; color: #1B2735; }
+
+/* Pesan Kejutan */
+.surprise-message {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); /* Efek kaca transparan */
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 20px;
+}
+
+.hidden { display: none; }
